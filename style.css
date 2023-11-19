@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    background-color: #edede9;
+    color: black;
+}
+
+.main-card-body{
+    padding: 30px;
+}
+
+.notes-card{
+    border: 1px solid black;
+}
+
+.notes-card:hover{
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.notes-heading{
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+.notes-text{
+    line-height: 18px;
+}
+
+.btn{
+    border-radius: 14px;
+    font-weight: 500;
+}
+
+.color-1{
+    background-color: #ffc300;
+    color:black;
+}
+
+.color-2{
+    background-color: #ff006e;
+    color: white;
+}
+
+.color-3{
+    background-color: #1e6091;
+    color: white;
+}
+
+.color-4{
+    background-color: #ef233c;
+    color: white;
+}
