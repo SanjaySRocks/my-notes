@@ -16,6 +16,7 @@ body{
 
 .notes-card{
     border: 1px solid black;
+    height: 200px;
 }
 
 .notes-card:hover{

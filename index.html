@@ -42,18 +42,18 @@
 
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Title</label>
-                                    <input focus type="text" class="form-control" id="exampleFormControlInput1"
+                                    <input focus type="text" class="form-control" id="note_name"
                                         placeholder="Enter title name">
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="exampleFormControlTextarea1" class="form-label">Content</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea class="form-control" id="note_content" rows="3"></textarea>
                                   </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <button id="createBtn" onclick="createNoteBtn()" type="button" class="btn btn-primary">Save Note</button>
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
 
 
 
-                <div id="notesContainer" class="row row-cols-1 row-cols-md-4 g-3">
+                <div id="notesContainer" class="row row-cols-1 row-cols-md-4 g-4">
                     
                     <!-- Notes Container -->
 
