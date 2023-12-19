@@ -11,6 +11,38 @@ function createNote(newNote) {
     localStorage.setItem('notesData', JSON.stringify(notesData));
 }
 
+
+function AddDummyData()
+{
+    fetch('dummyNotes.json')
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      data.forEach(note =>{
+        createNote(note);
+      });
+
+      getAllNotes();
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });  
+}
+
+function deleteAll()
+{
+    const result = confirm("Are you sure you want to DELETE ALL NOTES ?");
+
+    if(result == true)
+    {
+        localStorage.setItem('notesData', JSON.stringify([]));
+        alert("All Notes deleted successfully!")
+
+        getAllNotes();
+    }
+}
+
 function createNoteBtn() {
     const noteName = document.getElementById("note_name");
     const noteContent = document.getElementById("note_content");
