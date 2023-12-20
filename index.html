@@ -24,15 +24,17 @@
                 <p>Write your important notes!</p>
 
                 <div class="d-flex mb-3">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">Add
                         Note <i class="bi bi-pencil-square"></i></button>
-                        <button onclick="AddDummyData()" class="btn btn-secondary mx-3">Import Dummy <i class="bi bi-arrow-90deg-down"></i></button>
-                        <button onclick="deleteAll()" class="btn btn-danger">Delete All <i class="bi bi-trash3-fill"></i></button>
+                    <button onclick="AddDummyData()" class="btn btn-secondary mx-3">Import Dummy <i
+                            class="bi bi-arrow-90deg-down"></i></button>
+                    <button onclick="deleteAll()" class="btn btn-danger">Delete All <i
+                            class="bi bi-trash3-fill"></i></button>
 
                 </div>
 
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                <!-- Create Modal -->
+                <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -52,22 +54,53 @@
                                 <div class="mb-3">
                                     <label for="exampleFormControlTextarea1" class="form-label">Content</label>
                                     <textarea class="form-control" id="note_content" rows="3"></textarea>
-                                  </div>
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button id="createBtn" onclick="createNoteBtn()" data-bs-dismiss="modal" type="button" class="btn btn-primary">Save Note</button>
+                                <button id="createBtn" onclick="createNoteBtn()" data-bs-dismiss="modal" type="button"
+                                    class="btn btn-primary">Save Note</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Edit Modal -->
+                <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Note</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Title</label>
+                                    <input focus type="text" class="form-control" id="edit_note_name"
+                                        placeholder="Enter title name">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Content</label>
+                                    <textarea class="form-control" id="edit_note_content" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="createBtn" onclick="UpdateNote()" data-bs-dismiss="modal" type="button"
+                                    class="btn btn-primary">Update Note</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
 
-
                 <div id="notesContainer" class="row row-cols-1 row-cols-md-4 g-4">
-                    
+
                     <!-- Notes Container -->
-                    
+
                 </div>
 
 

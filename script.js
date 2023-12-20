@@ -36,8 +36,6 @@ function deleteAll()
     if(result == true)
     {
         localStorage.setItem('notesData', JSON.stringify([]));
-        alert("All Notes deleted successfully!")
-
         getAllNotes();
     }
 }
@@ -68,7 +66,7 @@ function getAllNotes() {
         timestamp = getFormattedDateTime(note.timestamp)
 
         const rawHTML = `<div class="col">
-        <div class="card notes-card color-${randomColor}">
+        <div class="card notes-card color-${randomColor}" onclick="editNote(${note.id})">
             <div class="card-body notes-body">
                 <div class="row">
                     <div class="col-10">
@@ -110,10 +108,48 @@ function deleteNote(noteId) {
 
 }
 
-function copyTo()
+function editNote(noteId)
 {
+    const modalEl = document.getElementById('editModal')
+    let myModal = new bootstrap.Modal(modalEl);
 
+    // Select edit modal
+    const noteTitle = document.getElementById("edit_note_name")
+    const noteContent = document.getElementById("edit_note_content")
+
+    noteTitle.setAttribute('data-index', noteId);
+
+    const notesData = JSON.parse(localStorage.getItem('notesData'));
+    const filterData = notesData.find(note => note.id === noteId); 
+
+    // Set data in edit modal
+    noteTitle.value = filterData.title;
+    noteContent.value = filterData.content;
+
+    myModal.show();
 }
+
+function UpdateNote()
+{
+    // Select edit modal
+    const noteTitle = document.getElementById("edit_note_name")
+    const noteContent = document.getElementById("edit_note_content")
+    const noteId = noteTitle.getAttribute('data-index');
+
+    const unixTime = Math.floor(Date.now() / 1000);
+    
+    const notesData = JSON.parse(localStorage.getItem('notesData'));
+    const filterIndex = notesData.findIndex(note => note.id == noteId); 
+
+    notesData[filterIndex].title = noteTitle.value;
+    notesData[filterIndex].content = noteContent.value;
+    notesData[filterIndex].timestamp = unixTime;
+
+    localStorage.setItem('notesData', JSON.stringify(notesData));
+
+    getAllNotes()
+}
+
 
 function getFormattedDateTime(unixTimestamp) {
     const date = new Date(unixTimestamp * 1000); // Convert Unix timestamp to milliseconds

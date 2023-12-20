@@ -61,6 +61,7 @@ body{
     color: white;
 }
 
+
 .date{
     display: flex;
     justify-content: space-between;
@@ -68,7 +69,4 @@ body{
     font-size: 0.6rem;
     font-weight: 700;
     text-transform: uppercase;
-
-    
 }
-
