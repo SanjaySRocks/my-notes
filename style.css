@@ -16,11 +16,11 @@ body{
 
 .notes-card{
     border: 1px solid black;
-    height: 200px;
+    min-height: 200px;
 }
 
 .notes-card:hover{
-    transform: scale(1.05);
+    transform: translateY(-8px);
     transition: all 0.2s ease;
     cursor: pointer;
 }
@@ -60,3 +60,15 @@ body{
     background-color: #ef233c;
     color: white;
 }
+
+.date{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    
+}
+
