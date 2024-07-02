@@ -1,6 +1,6 @@
 # My Notes
 
-A basic funtional notes saving app made with HTML CSS and JS.
+A fully funtional notes saving app made with HTML CSS and JS.
 
 # Screenshot
 
